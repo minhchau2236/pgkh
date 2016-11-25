@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping assembly="PSCPortal.DB" namespace="PSCPortal.DB" xmlns="urn:nhibernate-mapping-2.2">
+  <class name="PSCPortal.DB.Entities.Topic, PSCPortal.DB" table="`Topic`">
+    <id name="TopicId" type="Guid">
+      <column name="TopicId" />
+      <generator class="assigned" />
+    </id>
+    <property name="TopicName" />
+    <property name="TopicDescription" />
+    <property name="TopicParent" />
+    <property name="PageId" />
+    <property name="TopicOrder" />
+    <property name="Rss" />
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,69 @@
+﻿.RadTabStrip_Blue {
+    border-bottom: 2px solid #1885db;
+    width: 620px;
+}
+
+    .RadTabStrip_Blue .rtsLI {
+        text-transform: uppercase;
+    }
+        /*left*/
+        .RadTabStrip_Blue .rtsLI .rtsLink {
+            background: -webkit-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+            background: -o-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+            background: -ms-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+            background: -moz-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+            font: 12px Arial, Helvetica, sans-serif;
+            height: 37px;
+
+            color: #4b4c4d;
+            font-weight:bold;
+            text-decoration: none;
+            padding-left: 0px;
+            margin-top: 7px;
+        }
+            /* right */
+            .RadTabStrip_Blue .rtsLI .rtsLink .rtsOut {
+                background: -webkit-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+                background: -o-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+                background: -ms-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+                background: -moz-radial-gradient(top left, circle farthest-corner, #f4fbff 0%, #e2eaef 100%);
+                padding-right: 3px;
+                line-height: 0px;
+            }
+            /*middle*/
+            .RadTabStrip_Blue .rtsLI .rtsLink .rtsIn {
+                line-height: 35px;
+                text-align: center;
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+            /*cai duoc chon*/
+            .RadTabStrip_Blue .rtsLI .rtsLink.rtsSelected {
+                background: -webkit-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                background: -o-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                background: -ms-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                background: -moz-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                font: 12px Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                height: 43px;
+                line-height: 33px;
+                padding-left: 0px;
+                margin-top: 1px;
+            }
+
+                .RadTabStrip_Blue .rtsLI .rtsLink.rtsSelected .rtsIn {
+                    background: -webkit-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -o-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -ms-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -moz-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                }
+
+                .RadTabStrip_Blue .rtsLI .rtsLink.rtsSelected .rtsOut {
+                    background: -webkit-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -o-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -ms-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    background: -moz-radial-gradient(top left, circle farthest-corner, #77BEF7 0%, #1885db 100%);
+                    padding-top: 5px;
+                    line-height: 29px;
+                    color: White;
+                }

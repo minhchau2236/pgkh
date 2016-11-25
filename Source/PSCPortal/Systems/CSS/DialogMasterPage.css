@@ -1,0 +1,88 @@
+﻿body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-color:#f3f3f3;
+}
+
+.textinput
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#1a1a1b;
+
+	font-weight:bold;
+    line-height:25px; /*Ngọc 16122015*/
+}
+.submit
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:13px;
+	color:#b7b5b5;
+	font-weight:bold;
+	text-decoration:none;
+	
+}
+.submit:hover
+{
+	color:#403d3d;
+	text-decoration:underline;
+}
+/*-------------*/
+.Authentication_Container{
+	clear:both;	
+	width:100%;
+	overflow:auto;
+}
+.Authentication_Title{
+	margin:0 auto;
+	padding:0;
+	width:100%;
+}
+.Authentication_Title_Item{
+	margin:0 auto;
+	padding:10px 5px 0 5px;
+	float:left;
+	border-color:#004D71;
+	border-style:solid;
+	border-width: 1px 1px 1px 0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#FFF;
+	font-weight:bold;
+	width:13%;
+	height:30px;
+	text-align:center;
+	background-color:#004D71;
+}
+.Authentication_Row{
+	clear:both;	
+	width:100%;
+}
+.Authentication_RoleName{
+	float:left;
+	width:110px;
+	border-color:#004D71;
+	border-style:solid;
+	border-width: 0 1px 1px 1px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#333;
+	font-size:11px;
+	font-weight:normal;
+	text-align:left;
+	height:25px;
+	padding-left:10px;
+}
+.Authentication_Row_Item{
+	margin:0 auto;
+	padding:0 5px 0 5px;
+	float:left;
+	border-color:#004D71;
+	border-style:solid;
+	border-width: 0 1px 1px 0;
+	width:110px;
+	text-align:center;
+	height:25px;
+}

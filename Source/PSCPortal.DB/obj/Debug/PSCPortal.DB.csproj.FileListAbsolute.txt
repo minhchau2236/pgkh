@@ -1,0 +1,13 @@
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\PSCPortal.DB.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\PSCPortal.DB.pdb
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\Iesi.Collections.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\NHibernate.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\obj\Debug\PSCPortal.DB.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.DB\obj\Debug\PSCPortal.DB.pdb
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\PSCPortal.DB.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\PSCPortal.DB.pdb
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\Iesi.Collections.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\bin\Debug\NHibernate.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\obj\Debug\PSCPortal.DB.csprojResolveAssemblyReference.cache
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\obj\Debug\PSCPortal.DB.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.DB\obj\Debug\PSCPortal.DB.pdb

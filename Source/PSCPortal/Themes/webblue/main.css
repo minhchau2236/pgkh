@@ -1,0 +1,122 @@
+﻿.body
+{
+	margin:0px 0px 0px 0px;
+}
+.bg_lineblue
+{
+	background:url('/Themes/webblue/images/line_blue.jpg') repeat-x;
+	width:1050px; /* X: chỉnh size lớn hơn từ 1002 -> 1050 */
+	height:31px;
+	float:left;
+}
+.textlink
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#282928;
+	text-decoration:none;
+	
+}
+.textlink:hover
+{
+	color:#c84f06;
+}
+.text
+{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+	color:#282928;
+	text-decoration:none;
+}
+.box
+{
+	background:url('/Themes/webblue/images/box.jpg') repeat-x;
+	width:288px;
+	float:left;
+	height:33px;
+}
+.left_box
+{
+	background:url('/Themes/webblue/images/left_box.png') no-repeat;
+	width:10px;
+	height:33px;
+	float:left;
+}
+.right_box
+{
+	background:url('/Themes/webblue/images/right_box.png') no-repeat;
+	width:10px;
+	height:33px;
+	float:left;
+}
+.title_box
+{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color:#ffffff;
+	font-weight:bold;
+	padding-top:9px;
+}
+.link 
+{	
+	padding-left:27px;
+	padding-bottom:7px;
+}
+.link A
+{
+	font-family:Arial;
+	font-size:11px;
+	color:#535553;
+	text-decoration:none;
+	font-weight:bold;
+	
+}
+.link A:hover
+{
+	color:#c84f06;
+}
+.bottom_box
+{
+	background:url('/Themes/webblue/images/bottom_box.png') no-repeat;
+	width:308px;
+	height:6px;
+	float:left;
+}
+.line
+{
+	background:url('/Themes/webblue/images/line.jpg') repeat-x;
+	width:1050px; /* X: chỉnh size lớn hơn từ 1002 -> 1050 */
+	height:30px;
+	font-family:arial, Geneva, sans-serif;
+	font-size:11px;
+	color:#ffffff;
+	text-align:center;
+	padding-top:7px;
+	margin-top:1px;
+}
+.banner
+{
+	background:url('/Themes/webblue/images/banner.jpg') no-repeat;
+	width:1050px; /* X: chỉnh size lớn hơn từ 1002 -> 1050 */
+	height: 111px;
+	float: left;
+}.bottombox_left
+{
+	background:url('/Themes/webblue/images/bottombox_left.gif') no-repeat;
+	width: 10px;
+	height: 6px;
+	float: left;	
+}
+.bottombox_center
+{
+	background:url('/Themes/webblue/images/bottombox_center.gif') repeat-x;
+	height: 6px;
+	float: left;	
+}
+.bottombox_right
+{
+	background:url('/Themes/webblue/images/bottombox_right.gif') no-repeat;
+	width: 10px;
+	height: 6px;
+	float: left;	
+}

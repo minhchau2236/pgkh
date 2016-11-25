@@ -1,0 +1,117 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+*{margin:0px; padding:0px;}
+a{text-decoration:none;}
+img{border:0px;}
+
+.quantri{
+	width:1000px;
+	float:left;
+    padding-left:145px;
+}
+.logo{
+	width:1002px;
+	height:40px;
+	background:#d5e3ec;
+}
+.logo .logo_img{
+	float:left;
+	margin-left:5px;
+	margin-top:5px;
+}
+.R_logo{
+	float:right;
+	margin-top:5px;
+	margin-right:5px;
+}
+.logo .R_logo .ht{
+	width:121px;
+	height:30px;
+	height:28px;
+}
+/*.add{
+	height:105px;
+	background:#438eb9;
+}*/
+.panel{
+	float:left;
+	width:250px;
+	color:#000;
+	font:12px Arial, Helvetica, sans-serif;
+	padding-top:28px;
+	padding-left:15px;	
+}
+.panel input{
+	margin-left:5px;
+}
+.panel a{
+	display:block;
+	background:url(/Systems/Engine/CSS/bg_button.jpg) no-repeat;
+	width:77px;
+	height:25px;
+	color:#fff;
+	padding-left:35px;
+	padding-top:6px;
+	font:12px Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	margin-left:80px;
+}
+    .panel select {
+        margin-bottom:22px;
+    }
+.portlet1{
+	width:320px;
+	float:left;
+	height:105px;
+	font:12px Arial, Helvetica, sans-serif;
+	color:#000;
+	margin-top:5px;
+}
+.portlet1 p{
+	margin-bottom:3px;
+}
+.portlet1 span{
+	width:110px;
+	float:left;
+}
+.portlet1 a{
+	display:block;
+	background:url(/Systems/Engine/CSS/bg_button.jpg) no-repeat;
+	width:77px;
+	height:25px;
+	color:#fff;
+	padding-left:35px;
+	padding-top:6px;
+	font:12px Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	margin-left:150px;
+}
+
+.portlet2{
+	float:right;
+	width:350px;
+	height:105px;
+	font:12px Arial, Helvetica, sans-serif;
+	color:#000;
+	margin-top:5px;
+}
+.portlet2 p{
+	margin-bottom:3px;
+}
+.portlet2 span{
+	width:110px;
+	float:left;
+}
+.portlet2 a{
+	display:block;
+	background:url(/Systems/Engine/CSS/bg_button.jpg) no-repeat;
+	width:77px;
+	height:25px;
+	color:#fff;
+	padding-left:35px;
+	padding-top:6px;
+	font:12px Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	margin-left:150px;
+}

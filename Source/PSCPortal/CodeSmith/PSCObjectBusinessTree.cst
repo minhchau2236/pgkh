@@ -1,0 +1,804 @@
+<%-- 
+Name: PSCObjectBusiness
+Author: Nguyen Quang Hien
+Description: File san sinh code cho lop Object Business
+--%>
+<%@ CodeTemplate Language="C#" TargetLanguage="Text" Src="" Inherits="" Debug="False" Description="Template description here." %>
+<%@ Property Name="SourceTable" Type="SchemaExplorer.TableSchema" Optional="False" Category="Database" Description="Bang se san sinh class" %>
+<%@ Property Name="Namespace" Type="System.String" Optional="False" Category="Class" Description="Day la ten namespace" %>
+<%@ Property Name="ClassName" Type="System.String" Optional="False" Category="Class" Description="Day la ten lop" %>
+<%@ Property Name="ConnectionStringName" Type="System.String" Optional="False" Category="Class" Description="Day ten chuoi ket noi trong web.conf" %>
+<%@ Property Name="ParentNameColumn" Type="System.String" Optional="False" Category="Databse" Description="Day la ten cot chua quan he cha con" %>
+<%@ Assembly Name="SchemaExplorer" %>
+<%@ Import Namespace="SchemaExplorer" %>
+<%@ Assembly Name="System.Data" %>
+<%@ Import Namespace="System.Data" %>
+<%@ Map Name="CSharpAlias" Src="Sql-CSharp" Description="System to DbType Type Map" %>
+<%@ Map Name="CSharpAliasDbType" Src="SqlNativeType-DbType" Description="System to CSharp Type Map" %>
+
+<%-- Business Object Args --%>
+#region Business Object Args
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Common;
+using PSCPortal.Framework;
+namespace <%=Namespace%>
+{
+	public delegate void <%=ClassName%>Delegate (object sender, <%=ClassName%>Args args);
+	[Serializable]
+	public class <%=ClassName%>Args:EventArgs
+	{
+		private <%=ClassName%> _<%=GetAttributeName(ClassName)%>;
+		public <%=ClassName%> <%=ClassName%>
+		{
+			get
+			{
+				return _<%=GetAttributeName(ClassName)%>;
+			}
+		}
+		private bool _isEdit;
+		public bool IsEdit
+		{
+			get
+			{
+				return _isEdit;
+			}
+		}
+		public <%=ClassName%>Args (<%=ClassName%> <%=GetAttributeName(ClassName)%>, bool isEdit)
+		{
+			_<%=GetAttributeName(ClassName)%> = <%=GetAttributeName(ClassName)%>;
+			_isEdit = isEdit;
+		}
+	}
+}
+#endregion
+<%-- End Business Object Args --%>
+<%-- Business Object --%>
+#region Business Object
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Data.Common;
+using PSCPortal.Framework;
+namespace <%=Namespace%>
+{
+	[Serializable]
+	public class <%=ClassName%>:PSCPortal.Framework.BusinessObjectHierarchical<<%=ClassName%>>
+	{	
+		#region Properties
+	<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns){%>
+	<% if(!column.IsForeignKeyMember) { %>		
+		private <%=CSharpAlias[column.NativeType]%> _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%> <%if(CSharpAlias[column.NativeType]=="string"){%>= string.Empty<%}%>;						
+		public <%=CSharpAlias[column.NativeType]%> <%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>
+		{
+			get
+			{
+				return _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+			}
+			set
+			{								
+				<%if(CSharpAlias[column.NativeType]=="string"){%>
+				if(value==null)
+					value=string.Empty;
+				<%}%>
+				_<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%> = value;				
+			}
+		}
+		<% } %>
+		
+	<%}%>		
+		#endregion
+		
+		#region Constructions
+		public <%=ClassName%>()
+			:base()
+		{
+		}
+		
+		public <%=ClassName%>(DbDataReader reader)
+			:base(reader)
+		{		
+		}				
+		#endregion  
+		#region Abstract Methods
+		protected override void MappingData(System.Data.Common.DbDataReader reader)
+        {
+            <%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+			<%{%>
+				<% if(!column.IsForeignKeyMember) %>
+				<% { %>
+			_<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%> = (<%=CSharpAlias[column.NativeType]%>) reader["<%=column.Name%>"];
+				<% } %>
+			<%}%>      
+        }    
+		protected override System.Data.Common.DbCommand GetInsertCommand()
+        {
+            Database database = new Database(ConnectionStringName);
+            DbCommand command = database.GetCommand();
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<%{%>
+					<% if(!column.IsForeignKeyMember||column.Name==ParentNameColumn) %>
+					<% { %>			
+			#region <%=ClassName%><%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>
+			DbParameter pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = database.GetParameter();
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.DbType = System.Data.DbType.<%=CSharpAliasDbType[column.NativeType]%>;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Direction = System.Data.ParameterDirection.InputOutput;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.ParameterName = "@<%=column.Name%>";
+			<%if(column.Name!=ParentNameColumn){%>
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Value = _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+			<%}%>
+			<%else{%>
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Value = ((<%=ClassName%>)_parent).Id;
+			<%}%>
+			command.Parameters.Add(pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>);
+			#endregion
+					<% } %>
+				<%}%>            
+
+            #region Command Insert Data            
+			<% string strParams = string.Empty; %>
+			<% string strValues = string.Empty; %>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<% { %>
+					<% if(!column.IsForeignKeyMember||column.Name==ParentNameColumn) %>
+					<% { %>
+					<% strParams += string.Format("[{0}],", column.Name); %>
+					<% strValues += string.Format("@{0},", column.Name); %>
+					<% } %>
+				<% } %>
+			<% strParams = strParams.Substring(0, strParams.Length - 1); %>
+			<% strValues = strValues.Substring(0, strValues.Length - 1); %>
+			command.CommandText = "INSERT INTO [<%=SourceTable.Name%>] (<%=strParams%>) VALUES (<%=strValues%>)";
+			#endregion
+			
+            return command;
+        }
+		
+		protected override System.Data.Common.DbCommand GetUpdateCommand()
+        {
+            Database database = new Database(ConnectionStringName);
+            DbCommand command = database.GetCommand();
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<%{%>
+					<% if(!column.IsForeignKeyMember||column.Name==ParentNameColumn) %>
+					<% { %>			
+			#region <%=ClassName%><%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>
+			DbParameter pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = database.GetParameter();
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.DbType = System.Data.DbType.<%=CSharpAliasDbType[column.NativeType]%>;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Direction = System.Data.ParameterDirection.InputOutput;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.ParameterName = "@<%=column.Name%>";
+			<%if(column.Name!=ParentNameColumn){%>
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Value = _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+			<%}%>
+			<%else{%>
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Value = ((<%=ClassName%>)_parent).Id;
+			<%}%>
+			command.Parameters.Add(pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>);
+			#endregion
+					<% } %>
+				<%}%>            
+
+            #region Command Update Data            
+			<% string strUpdateValues = string.Empty; %>
+			<% string strPrimaryKeyValues = string.Empty; %>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<% { %>
+					<% if(!column.IsForeignKeyMember&&!column.IsPrimaryKeyMember||column.Name==ParentNameColumn) %>
+					<% { %>
+					<% strUpdateValues += string.Format("{0} = {1}, ", string.Format("[{0}]", column.Name), string.Format("@{0}", column.Name));%>
+					<% } %>
+				<% } %>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<% { %>
+					<% if(column.IsPrimaryKeyMember) %>
+					<% { %>
+					<% strPrimaryKeyValues += string.Format("{0} = {1} AND ", string.Format("[{0}]", column.Name), string.Format("@{0}", column.Name));%>
+					<% } %>
+				<% } %>
+			<% strUpdateValues = strUpdateValues.Substring(0, strUpdateValues.Length - 2); %>
+			<% strPrimaryKeyValues = strPrimaryKeyValues.Substring(0, strPrimaryKeyValues.Length - 5); %>
+			command.CommandText = "UPDATE [<%=SourceTable.Name%>] SET <%=strUpdateValues%> WHERE <%=strPrimaryKeyValues%>";
+			#endregion
+			
+            return command;
+        }
+		
+		protected override System.Data.Common.DbCommand GetDeleteCommand()
+        {
+            Database database = new Database(ConnectionStringName);
+            DbCommand command = database.GetCommand();	         			
+            #region Command Delete Data            	
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<%{%>
+					<% if(!column.IsForeignKeyMember&&column.IsPrimaryKeyMember) %>
+					<% { %>			
+			#region <%=ClassName%><%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>
+			DbParameter pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = database.GetParameter();
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.DbType = System.Data.DbType.<%=CSharpAliasDbType[column.NativeType]%>;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Direction = System.Data.ParameterDirection.InputOutput;
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.ParameterName = "@<%=column.Name%>";
+			pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Value = _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+			command.Parameters.Add(pr<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>);
+			#endregion
+					<% } %>
+				<%}%>          
+				
+			#region Command Delete Data
+            command.CommandText = "create table #temp(stt int identity(0,1),<%=ClassName%>Id uniqueidentifier); ";
+            command.CommandText += "insert into #temp (<%=ClassName%>Id) values(@<%=ClassName%>Id); ";
+            command.CommandText += "declare @index int; ";
+            command.CommandText += "set @index = 0; ";
+            command.CommandText += "declare @max int; ";
+            command.CommandText += "set @max = 0; ";
+            command.CommandText += "declare @temp uniqueidentifier; ";
+            command.CommandText += "while(@index<=@max) ";
+            command.CommandText += "begin ";
+            command.CommandText += "set @temp = (select <%=ClassName%>Id from #temp where stt=@index); ";
+            command.CommandText += "insert into #temp (<%=ClassName%>Id) ";
+            command.CommandText += "select <%=ClassName%>Id ";
+            command.CommandText += "from <%=ClassName%> ";
+            command.CommandText += "where <%=ClassName%>Parent=@temp; ";
+            command.CommandText += "set @index = @index + 1; ";
+            command.CommandText += "set @max = (select max(stt) from #temp); ";
+            command.CommandText += "end ";
+            command.CommandText += "delete <%=ClassName%> where <%=ClassName%>Id in (select <%=ClassName%>Id from #temp); ";
+            #endregion
+
+			#endregion
+			
+            return command;
+        }
+				
+		public override bool Equals(object obj)
+		{
+			if(obj.GetType() == typeof(<%=ClassName%>)
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<%{%>
+					<% if(!column.IsForeignKeyMember&&column.IsPrimaryKeyMember) %>
+					<% { %>			
+				&&((<%=ClassName%>)obj)._<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>==_<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>
+					<% } %>
+				<%}%>
+			   )
+				return true;
+			return false;
+		}
+		public override int GetHashCode()
+        {
+			int hashCode = 0;
+            <%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<%{%>
+					<% if(!column.IsForeignKeyMember&&column.IsPrimaryKeyMember) %>
+					<% { %>			
+				hashCode += _<%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>.GetHashCode();
+					<% } %>
+				<%}%>
+			return hashCode;
+        }
+		protected static new string ConnectionStringName
+        {
+            get 
+            {
+                return "<%=ConnectionStringName%>";
+            }
+        }
+		#endregion
+	}
+}
+#endregion
+<%-- End Business Object --%>
+
+<%-- Business Object Collection --%>
+#region Business Object Collection
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using PSCPortal.Framework;
+using System.Data.Common;
+namespace <%=Namespace%>
+{
+	[Serializable]
+	public class <%=ClassName%>Collection:PSCPortal.Framework.BusinessObjectTree<<%=ClassName%>Collection, <%=ClassName%>>
+	{
+		protected <%=ClassName%>Collection(<%=ClassName%> root)
+			:base(root)
+		{
+		}		
+		
+		protected override DbCommand GetSelectAllCommand()
+        {
+            Database database = new Database(ConnectionStringName);
+            DbCommand command = database.GetCommand();
+			<% string strFullFieldsParams = string.Empty; %>
+			<% string strFullFields = string.Empty; %>
+			<% string strPrimaryKeys = string.Empty; %>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<% { %>
+					<% if(column.IsPrimaryKeyMember) %>
+					<% { %>
+					<% strPrimaryKeys = column.Name + ", "; %>					
+					<% } %>
+				<% } %>						
+			<% strPrimaryKeys = strPrimaryKeys.Substring(0, strPrimaryKeys.Length - 2); %>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+				<% { %>
+					<% if(!column.IsForeignKeyMember) %>
+					<% { %>
+					<% strParams += string.Format("[{0}],", column.Name); %>
+					<% } %>
+				<% } %>		
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+			<%if(!column.IsForeignKeyMember||column.Name==ParentNameColumn)%>
+			<%{%>
+				<% { %>				
+					<% if(column.NativeType != "nvarchar")%>
+						<% strFullFieldsParams += column.Name + " " + column.NativeType + ", "; %>
+					<% else %>
+						<% strFullFieldsParams += column.Name + " " + column.NativeType + "(" + column.Size + ")" + ", "; %>
+					<% strFullFields += column.Name + ", "; %>
+				<% } %>
+			<%}%>
+			<% strFullFieldsParams = strFullFieldsParams.Substring(0, strFullFieldsParams.Length - 2); %>
+			<% strFullFields = strFullFields.Substring(0, strFullFields.Length - 2); %>
+            command.CommandText = "create table #temp(stt int identity(0,1), <%= strFullFieldsParams%>); ";
+            command.CommandText += "insert into #temp(<%= strFullFields %>) ";
+            command.CommandText += "select <%=strFullFields%> ";
+            command.CommandText += "from <%=SourceTable.Name%> ";
+            command.CommandText += "where <%=ParentNameColumn%> is null; ";
+            command.CommandText += "declare @index int; ";
+            command.CommandText += "set @index = 0; ";
+            command.CommandText += "declare @max int; ";
+            command.CommandText += "set @max = (select max(stt) from #temp); ";
+            command.CommandText += "declare @temp uniqueidentifier; ";
+            command.CommandText += "while(@index<=@max) ";
+            command.CommandText += "begin ";
+            command.CommandText += "set @temp = (select <%=strPrimaryKeys%> from #temp where stt=@index); ";
+            command.CommandText += "insert into #temp(<%=strFullFields%>) ";
+            command.CommandText += "select <%=strFullFields%> ";
+            command.CommandText += "from <%=SourceTable.Name%> ";
+            command.CommandText += "where <%=ParentNameColumn%>=@temp; ";
+            command.CommandText += "set @index=@index +1; ";
+            command.CommandText += "set @max=(select max(stt) from #temp); ";
+            command.CommandText += "end ";
+            command.CommandText += "select <%=strFullFields%> ";
+            command.CommandText += "from #temp ";
+			command.CommandText += "where <%=ParentNameColumn%> is not null; "; 
+            return command;
+        }
+       
+        public static <%=ClassName%>Collection Get<%=ClassName%>Collection()
+        {
+            Database database = new Database("<%=ConnectionStringName%>");
+            <%=ClassName%>Collection result = new <%=ClassName%>Collection(new <%=ClassName%>());
+            using (DbConnection connection = database.GetConnection())
+            {
+                DbCommand command = result.GetSelectAllCommand();
+                command.Connection = connection;
+                connection.Open();
+                DbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    Guid idParent = Guid.Empty;
+                    if (reader["<%=ParentNameColumn%>"].ToString() != string.Empty)
+                        idParent = (Guid)reader["<%=ParentNameColumn%>"];
+                  
+                    <%=ClassName%> parent = (<%=ClassName%>)result.Search(d => ((<%=ClassName%>)d).<%=GetPropertyName(SourceTable.PrimaryKey.MemberColumns[0].Name.Replace(SourceTable.Name, ""))%> == idParent);
+                    <%=ClassName%> dir = new <%=ClassName%>(reader);
+                    result.Add(parent, dir);
+                }
+            }
+            return result;
+        }
+		protected static new string ConnectionStringName
+        {
+            get
+            {
+                return "<%=ConnectionStringName%>";
+            }
+        }
+	}
+}	
+#endregion
+<%-- End Business Object Collection --%>
+
+<%-- Business Object Page ASPX --%>
+	<%--Header Template--%>
+/*******Header Template*******/
+<%%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %%>
+/*******End Header Template*******/
+	<%--End Header Template--%>
+	<%--Javascript Template--%>
+/*******Javascript Template*******/	
+	<script language="javascript" type="text/javascript">    
+		var dialogMethod;
+        function CallWebMethodSuccess(results, context, methodName) {
+            switch (methodName) {
+                case "<%=ClassName%>New":
+                    {
+                        <%=ClassName%>NewCallback(results, context, methodName);
+                    }
+                    break;
+                case "<%=ClassName%>Add":
+                    {
+                        <%=ClassName%>AddCallback(results, context, methodName);
+                    }
+                    break;
+                case "<%=ClassName%>Edit":
+                    {
+                        <%=ClassName%>EditCallback(results, context, methodName);
+                    }
+                    break;
+                case "<%=ClassName%>Update":
+                    {
+                        <%=ClassName%>UpdateCallback(results, context, methodName);
+                    }
+                    break;                
+                case "<%=ClassName%>Delete":
+                    {
+                        <%=ClassName%>DeleteCallback(results, context, methodName);
+                    }
+                    break;                    
+            }
+        }
+		
+        function CallWebMethodFailed(results, context, methodName) {
+            alert(results._message);
+        }        
+
+        function <%=ClassName%>New() {
+            PageMethods.<%=ClassName%>New(CallWebMethodSuccess, CallWebMethodFailed);
+        }
+        function <%=ClassName%>NewCallback(results, context, methodName) {
+			dialogMethod = "<%=ClassName%>New";
+            var oWnd = $find("<%%= rw<%=ClassName%>.ClientID %%>");
+            oWnd.setSize(600, 280);
+            oWnd.setUrl("<%=ClassName%>Detail.aspx");
+            oWnd.show();             
+        }
+        function <%=ClassName%>AddCallback(result, context, methodName) {
+            var obj = Sys.Serialization.JavaScriptSerializer.deserialize(result);
+            var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+            tree.trackChanges();
+            var node = new Telerik.Web.UI.RadTreeNode();
+            node.set_text(obj.Name);
+            node.set_value(obj.Id);
+            tree.get_nodes().add(node);
+            tree.commitChanges();      
+        }
+
+        function <%=ClassName%>Edit() {
+            var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+            var curNode = tree.get_selectedNode();      
+            if (!curNode) {
+                radalert("You have not chosen the <%=ClassName%> yet!", 250, 100, "Error");
+                return;
+            }       
+            PageMethods.<%=ClassName%>Edit(curNode.get_value(), CallWebMethodSuccess, CallWebMethodFailed);
+        }
+        function <%=ClassName%>EditCallback(results, context, methodName) {
+			dialogMethod = "<%=ClassName%>Edit";
+            var oWnd = $find("<%%= rw<%=ClassName%>.ClientID %%>");
+            oWnd.setSize(600, 280);
+            oWnd.setUrl("<%=ClassName%>Detail.aspx");
+            oWnd.show(); 
+        }
+        
+        function <%=ClassName%>UpdateCallback(results, context, methodName) {
+            var obj = Sys.Serialization.JavaScriptSerializer.deserialize(results);
+            var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+            var curNode = tree.get_selectedNode();
+            tree.trackChanges();
+            curNode.set_text(obj.Name);
+            tree.commitChanges();
+        }
+        
+        function <%=ClassName%>Delete() {			
+            var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+            var curNode = tree.get_selectedNode();
+            if (!curNode) {
+                radalert("You have not chosen the <%=ClassName%> yet!", 250, 100, "Error");
+                return;
+            }
+			radconfirm("Are you sure!", <%=ClassName%>DeleteConfirm, 250, 100, null, "Warning");    			          
+        }
+		function <%=ClassName%>DeleteConfirm(args){
+			if (!args)
+                return;
+			var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+			var curNode = tree.get_selectedNode();
+			PageMethods.<%=ClassName%>Delete(curNode.get_value(), CallWebMethodSuccess, CallWebMethodFailed); 
+		}
+        function <%=ClassName%>DeleteCallback(results, context, methodName) {
+			radalert("Delete <%=ClassName%> Success", 250, 100, "Info");
+            var tree = $find("<%%= rtv<%=ClassName%>.ClientID %%>");
+            var curNode = tree.get_selectedNode();
+            tree.trackChanges();
+            curNode.get_parent().get_nodes().remove(curNode);
+            tree.commitChanges();	
+        }		
+		function ChangeParent(sender, eventArgs) {
+            var nodeSrc = eventArgs.get_sourceNode();
+            var nodeDest = eventArgs.get_destNode();
+            nodeSrc.get_parent().get_nodes().remove(nodeSrc);
+            nodeDest.get_nodes().add(nodeSrc);
+            PageMethods.ChangeParent(eventArgs.get_sourceNode().get_value(), eventArgs.get_destNode().get_value(), CallWebMethodSuccess, CallWebMethodFailed);
+        }
+        function pageLoad() {                    
+        }        
+		function RadWindow<%=ClassName%>Close(sender, args) {
+            if (!args.get_argument())
+                return;
+            switch (dialogMethod) {
+                case "<%=ClassName%>New":
+                    {
+                        PageMethods.<%=ClassName%>Add(CallWebMethodSuccess, CallWebMethodFailed);
+                    }
+                    break;
+                case "<%=ClassName%>Edit":
+                    {
+                        PageMethods.<%=ClassName%>Update(CallWebMethodSuccess, CallWebMethodFailed);
+                    }
+                    break;				
+            }
+        }         
+    </script>
+/*******End Javascript Template*******/
+	<%--End Javascript Template--%>
+	<%--Control Template--%>
+/*******Control Template*******/
+	<telerik:RadWindow ID="rw<%=ClassName%>" runat="server" Modal="True" VisibleStatusbar="False" OnClientClose="RadWindow<%=ClassName%>Close">
+    </telerik:RadWindow>
+	<div>
+        <a href="javascript:void(0)" onclick="<%=ClassName%>New();">[New]</a>
+        <a href="javascript:void(0)" onclick="<%=ClassName%>Edit();">[Edit]</a>      
+        <a href="javascript:void(0)" onclick="<%=ClassName%>Delete();">[Delete]</a>
+    </div>
+	<div>     
+		<telerik:RadTreeView ID="rtv<%=ClassName%>" runat="server" DataTextField="Name" DataValueField="Id"  EnableDragAndDrop="True" OnClientNodeDropping="ChangeParent">
+        </telerik:RadTreeView>
+    </div>
+/*******End Control Template*******/
+	<%--End Control Template--%>
+<%-- End Business Object Page ASPX --%>
+
+<%-- Business Object Page ASPX.CS--%>
+/*******Server Side ASPX.CS*******/
+		protected void Page_Load(object sender, EventArgs e)
+        {
+            if(!IsPostBack)
+                LoadData();
+        }
+		protected void LoadData()
+        {
+            rtv<%=ClassName%>.DataSource = <%=ClassName%>List.GetBindingSource();
+            rtv<%=ClassName%>.DataBind();
+        }
+		protected static <%=ClassName%>Collection <%=ClassName%>List
+        {
+            get
+            {
+                if (DataStatic["<%=ClassName%>List"] == null)
+                    DataStatic["<%=ClassName%>List"] = <%=ClassName%>Collection.Get<%=ClassName%>Collection();
+                return DataStatic["<%=ClassName%>List"] as <%=ClassName%>Collection;
+            }
+        }		
+        [System.Web.Services.WebMethod]
+        public static void <%=ClassName%>New()
+        {          
+            <%=ClassName%> item = new <%=ClassName%>();
+            item.Id = Guid.NewGuid();
+            PSCDialog.DataShare = new <%=ClassName%>Args(item, false);
+        }        
+        [System.Web.Services.WebMethod]
+        public static string <%=ClassName%>Add()
+        {
+            <%=ClassName%>List.AddDB(((<%=ClassName%>Args)PSCDialog.DataShare).<%=ClassName%>);			
+            System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return js.Serialize(((<%=ClassName%>Args)PSCDialog.DataShare).<%=ClassName%>);
+        }
+        [System.Web.Services.WebMethod]
+        public static void <%=ClassName%>Edit(string id)
+        {
+            Guid id<%=ClassName%> = new Guid(id);
+            PSCDialog.DataShare = new <%=ClassName%>Args((<%=ClassName%>)<%=ClassName%>List.Search(o => ((<%=ClassName%>)o).Id == id<%=ClassName%>), true);
+        }
+        [System.Web.Services.WebMethod]
+        public static string <%=ClassName%>Update()
+        {
+            (PSCDialog.DataShare as <%=Namespace%>.<%=ClassName%>Args).<%=ClassName%>.Update();
+			System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
+            return js.Serialize(((<%=ClassName%>Args)PSCDialog.DataShare).<%=ClassName%>);
+        }
+        [System.Web.Services.WebMethod]
+        public static void <%=ClassName%>Delete(string id)
+        {
+            Guid id<%=ClassName%> = new Guid(id);
+            <%=ClassName%>List.RemoveDB((<%=ClassName%>)<%=ClassName%>List.Search(o => ((<%=ClassName%>)o).Id == id<%=ClassName%>)); 
+        }        		
+		[System.Web.Services.WebMethod]
+        public static void ChangeParent(string idChild, string idParent)
+        {
+            <%=ClassName%> child = (<%=ClassName%>)<%=ClassName%>List.Search(t => ((<%=ClassName%>)t).Id == new Guid(idChild));
+            <%=ClassName%> parent = (<%=ClassName%>)<%=ClassName%>List.Search(t => ((<%=ClassName%>)t).Id == new Guid(idParent));
+            child.Parent = parent;
+            child.Update();
+        }
+/*******End Server Side ASPX.CS*******/		
+<%-- End Business Object Page ASPX.CS--%>
+
+
+<%-- Business Object Page Detail ASPX --%>
+/*******Header Template*******/
+<%%@ Register Assembly="Telerik.Web.UI" Namespace="Telerik.Web.UI" TagPrefix="telerik" %%>
+/*******End Header Template*******/
+/*******Javascript Template*******/
+	<script language="javascript" type="text/javascript">
+        function CallWebMethodSuccess(results, context, methodName) {
+            switch (methodName) {
+                case "Save":
+                    {
+                        SaveCallback(results, context, methodName);
+                    }
+                    break;                            
+            }
+        }
+        function CallWebMethodFailed(results, context, methodName) {
+            alert(results._message);
+        }
+        function Save() {
+            
+			<%{%>
+			<%string args = string.Empty;%>
+			<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+			<%{%>
+				<% if(!column.IsForeignKeyMember&&!column.IsPrimaryKeyMember) %>
+				<%{%>						
+					<%if(CSharpAlias[column.NativeType]=="DateTime"){%>					
+						var rdi<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = $find("<%%= rdi<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.ClientID %%>");
+						<%args += "rdi"+GetPropertyName(column.Name.Replace(SourceTable.Name, ""))+".get_value()" + ", ";%>
+					<%}%>
+					<%else {%>
+						var txt<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = document.getElementById("<%%= txt<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.ClientID %%>");
+						<%args += "txt"+GetPropertyName(column.Name.Replace(SourceTable.Name, ""))+".value" + ", ";%>
+					<%}%>
+				<%}%>
+			<%}%>
+			<%if(args!=string.Empty)%>
+				<%args = args.Substring(0, args.Length - 2);%>
+            PageMethods.Save(<%=args%>, CallWebMethodSuccess, CallWebMethodFailed);
+			<%}%>
+        }
+        function SaveCallback(results, context, methodName) {
+            var oWnd = GetRadWindow();
+            oWnd.close(true); 
+        }
+        function Cancel() {
+            var oWnd = GetRadWindow();
+            oWnd.close(false); 
+        }       
+    </script>
+/*******End Javascript Template*******/
+/*******Control Template*******/
+<table style="width: 100%;" border="0" cellpadding="0" cellspacing="0">
+<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+<%{%>
+<% if(!column.IsForeignKeyMember) %>
+	<% { %>		
+	<tr>
+        <td>
+            <%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>:
+        </td>
+        <td>
+            <%if(CSharpAlias[column.NativeType]=="DateTime"){%>
+				<telerik:RadDateInput ID="rdi<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>" runat="server" DisplayDateFormat="dd/MM/yyyy"
+					Width="200px" MinDate="1900-01-01">
+				</telerik:RadDateInput>
+			<%}%>
+			<%else{%>
+				<asp:TextBox ID="txt<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>" runat="server" Width="200px"></asp:TextBox>
+			<%}%>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>  
+	<%}%>
+<%}%>	   	
+    <tr>
+        <td>
+            &nbsp;
+        </td>
+        <td>
+            <a href="javascript:void(0)" onclick="Save();">[Save]</a>
+            <a href="javascript:void(0)" onclick="Cancel();">[Cancel]</a>
+        </td>
+        <td>
+            &nbsp;
+        </td>
+    </tr>
+</table>
+/*******End Control Template*******/
+<%-- End Business Object Page Detail ASPX --%>
+
+<%-- Business Object Page Detail ASPX.CS --%>
+/*******Server Side Detail ASPX.CS*******/
+	private static <%=ClassName%>Args Args
+    {
+        get
+        {
+            return DataShare as <%=ClassName%>Args;
+        }
+    }
+	protected void Page_Load(object sender, EventArgs e)
+    {              
+		Response.Cache.SetCacheability(HttpCacheability.NoCache);		
+		LoadData();
+    }
+	protected void LoadData()
+	{
+		<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+		<%{%>
+		<% if(!column.IsForeignKeyMember) %>
+			<%{%>		
+				<%if(CSharpAlias[column.NativeType]=="DateTime"){%>
+					rdi<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.SelectedDate = Args.<%=ClassName%>.<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>;
+				<%}%>
+				<%else{%>
+					txt<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %>.Text = Args.<%=ClassName%>.<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %><%=CSharpAlias[column.NativeType]=="string"?string.Empty:".ToString()"%>;
+				<%}%>
+			<%}%>
+		<%}%>
+	}
+    [System.Web.Services.WebMethod]
+	<%{%>
+		<%string args = string.Empty;%>
+		<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+		<%{%>
+		<% if(!column.IsForeignKeyMember&&!column.IsPrimaryKeyMember) %>		
+			<%{%>		
+				<%if(CSharpAlias[column.NativeType]=="DateTime"){%>
+					<%args += "DateTime "+GetAttributeName(column.Name.Replace(SourceTable.Name, "")) + ", ";%>
+				<%}%>
+				<%else{%>
+					<%args += "string "+GetAttributeName(column.Name.Replace(SourceTable.Name, "")) + ", ";%>
+				<%}%>
+			<%}%>
+		<%}%>
+		<%if(args!=string.Empty)%>
+			<%args = args.Substring(0, args.Length - 2);%>	
+    public static void Save(<%=args%>)
+	<%}%>
+    {      
+		<%foreach(SchemaExplorer.ColumnSchema column in SourceTable.Columns)%>
+		<%{%>
+		<% if(!column.IsForeignKeyMember&&!column.IsPrimaryKeyMember) %>
+			<%{%>		
+				<%if(CSharpAlias[column.NativeType]=="DateTime"){%>
+					Args.<%=ClassName%>.<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = <%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+				<%}%>
+				<%else{%>
+					Args.<%=ClassName%>.<%=GetPropertyName(column.Name.Replace(SourceTable.Name, "")) %> = <%=GetAttributeName(column.Name.Replace(SourceTable.Name, ""))%>;
+				<%}%>
+			<%}%>
+		<%}%>
+    }
+/*******End Server Side Detail ASPX.CS*******/
+<%-- End Business Object Page Detail ASPX.CS --%>
+<script runat="template">
+	private string GetAttributeName(string attributeName)
+	{
+		string result;		
+		result = attributeName.Substring(0,1).ToLower()+attributeName.Substring(1);		
+		return result;
+	}
+	private string GetPropertyName(string propertyName)
+	{
+		string result;		
+		result = propertyName.Substring(0,1).ToUpper()+propertyName.Substring(1);
+		return result;
+	}
+</script>

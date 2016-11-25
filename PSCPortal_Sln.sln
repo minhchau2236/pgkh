@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal.Framework", "Source\PSCPortal.Framework\PSCPortal.Framework.csproj", "{831FFEF7-5C7E-4452-8664-83EFE560985D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal.Engine", "Source\PSCPortal.Engine\PSCPortal.Engine.csproj", "{9E3C0135-05EF-4997-8D88-60D98D129A6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal.DB", "Source\PSCPortal.DB\PSCPortal.DB.csproj", "{AAF84E32-F7B8-4C1A-AA0C-DEA3B2FB79C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal.CMS", "Source\PSCPortal.CMS\PSCPortal.CMS.csproj", "{39EF2486-158E-407A-833E-B5B17BF3167A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal", "Source\PSCPortal\PSCPortal.csproj", "{7F14D4AD-4347-43EF-8533-51769C094FAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSCPortal.Security", "Source\PSCPortal.Security\PSCPortal.Security.csproj", "{D4FC80F6-2C9E-41CF-9E0C-0421958FF936}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{831FFEF7-5C7E-4452-8664-83EFE560985D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831FFEF7-5C7E-4452-8664-83EFE560985D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831FFEF7-5C7E-4452-8664-83EFE560985D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831FFEF7-5C7E-4452-8664-83EFE560985D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E3C0135-05EF-4997-8D88-60D98D129A6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E3C0135-05EF-4997-8D88-60D98D129A6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E3C0135-05EF-4997-8D88-60D98D129A6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E3C0135-05EF-4997-8D88-60D98D129A6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAF84E32-F7B8-4C1A-AA0C-DEA3B2FB79C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAF84E32-F7B8-4C1A-AA0C-DEA3B2FB79C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAF84E32-F7B8-4C1A-AA0C-DEA3B2FB79C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAF84E32-F7B8-4C1A-AA0C-DEA3B2FB79C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39EF2486-158E-407A-833E-B5B17BF3167A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39EF2486-158E-407A-833E-B5B17BF3167A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39EF2486-158E-407A-833E-B5B17BF3167A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39EF2486-158E-407A-833E-B5B17BF3167A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F14D4AD-4347-43EF-8533-51769C094FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F14D4AD-4347-43EF-8533-51769C094FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F14D4AD-4347-43EF-8533-51769C094FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F14D4AD-4347-43EF-8533-51769C094FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FC80F6-2C9E-41CF-9E0C-0421958FF936}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FC80F6-2C9E-41CF-9E0C-0421958FF936}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FC80F6-2C9E-41CF-9E0C-0421958FF936}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FC80F6-2C9E-41CF-9E0C-0421958FF936}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

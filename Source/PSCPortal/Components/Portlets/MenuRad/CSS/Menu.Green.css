@@ -1,0 +1,96 @@
+﻿
+/* Roor - background*/
+.RadMenu_Blue .rmRootGroup {
+    background: #00568f;
+    height: 40px;
+    padding-left: 0px;
+    clear: both;
+}
+
+.RadMenu_Blue a.rmLink,
+.RadMenu_Blue .rmText {
+    background-image: url('Menu/rmSprite.png');
+    background-color: Transparent;
+}
+/* Text*/
+.RadMenu_Blue .rmText {
+    float: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 38px;
+    background-position: 100% -46px;
+    vertical-align: top;
+    margin: 1px 0px 0px 0px;
+    padding-left: 11px !important;
+    padding-right: 21px !important;
+}
+
+
+.RadMenu_Blue .rmLast .rmText {
+    background-image: none;
+}
+
+.RadMenu_Blue .rmLink {
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------*/
+
+.RadMenu_Blue a.rmLink:hover {
+    background-position: 100% -293px;
+}
+
+
+.RadMenu_Blue a.rmExpanded,
+.RadMenu_Blue a.rmExpanded:hover {
+    background-position: 100% -293px;
+}
+
+
+.RadMenu_Blue .rmLast a.rmExpanded .rmText,
+.RadMenu_Blue .rmLast a.rmExpanded:hover .rmText {
+    background-position: 100% -46px;
+    background-image: url('Menu/rmSprite.png');
+}
+
+.RadMenu_Blue a.rmExpanded .rmExpandRight {
+    color: #fff;
+    background-image: url('Menu/rmSprite.png');
+    background-position: 0px -235px !important;
+    background-repeat: repeat-x;
+}
+/*---------------------------------------------------------------------*/
+/* Cấp 2 - Text*/
+.RadMenu_Blue .rmLevel1 .rmText {
+    text-align: left;
+    font-family: Arial;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 12px;
+    height: 34px;
+    line-height:35px;
+    COLOR: #fff;
+    TEXT-DECORATION: none;
+    padding-right: 33px !important;
+    padding-left: 27px !important;
+    margin-left: 0px !important;
+    border-right: 1px solid #00568f;
+    border-left: 1px solid #00568f;
+    border-bottom: 1px solid #00568f;
+    background-image: url('Menu/rmSprite.png');
+    background-position: 0px -200px !important;
+}
+/* Cấp 2 - Link*/
+.RadMenu_Blue .rmLevel1 .rmLink {
+    text-decoration: none;
+}
+
+    .RadMenu_Blue .rmLevel1 .rmLink :hover {
+        color: #fff;
+        background-image: url('Menu/rmSprite.png');
+        background-position: 0px -235px !important;
+        background-repeat: repeat-x;
+    }
+/*-------------------------------*/

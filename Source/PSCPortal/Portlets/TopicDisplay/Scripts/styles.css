@@ -1,0 +1,127 @@
+.container {
+	overflow: hidden;
+	width: 650px;
+	margin: 0 auto;
+}
+a {color: #fff;}
+/*--Main Image Preview--*/
+.main_image {
+	width: 320px; height: 309px;
+	float: left;
+	background: #333;
+	position: relative;
+	overflow: hidden;
+	color: #fff;
+}
+.main_image h2 {
+	font-size: 2em;
+	font-weight: normal;
+	margin: 0 0 5px;	padding: 10px;
+}
+.main_image p {
+	font-size: 1.2em;
+	padding: 10px;	margin: 0;
+	line-height: 1.6em;
+}
+.block small { 
+	padding: 0 0 0 20px; 
+	background: url(/Portlets/TopicDisplay/Images/icon_cal.gif) no-repeat 0 center; 
+	/*font-size: 1em;*/ 
+}
+.main_image .block small {margin-left: 10px;}
+.main_image .desc{
+	position: absolute;
+	bottom: 0;	left: 0;
+	width: 100%;
+	display: none;
+}
+.main_image .block{
+	width: 100%;
+	background: #111;
+	border-top: 1px solid #000;
+}
+.main_image a.collapse {
+	background: url(/Portlets/TopicDisplay/Images/btn_coll.gif) no-repeat left top;
+	height: 27px; width: 93px;
+	text-indent: -99999px;
+	position: absolute; 
+	top: -27px; right: 20px; 
+}
+.main_image a.show {background-position: left bottom;} 
+
+
+.image_thumb {
+	float: left;
+	width: 330px;
+	background: #f0f0f0;
+	/*border-right: 1px solid #fff;*/
+	border-top: 1px solid #ccc;
+}
+.image_thumb img {
+	border: 1px solid #ccc; 
+	padding: 5px; 
+	background: #fff; 
+	float: left;
+}
+.image_thumb ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+.image_thumb ul li{
+	margin: 0; padding: 3px 5px;
+	background: #f0f0f0 url(/Portlets/TopicDisplay/Images/nav_a.gif) repeat-x;
+	width: 319px;
+    height:70px;
+	float: left;
+	border-bottom: 1px solid #ccc;
+	/*border-top: 1px solid #fff;*/
+	border-right: 1px solid #ccc;
+}
+.image_thumb ul li.hover {
+	background: #ddd;
+	cursor: pointer;
+}
+.image_thumb ul li.active {
+	background: #ddd;
+	cursor: default;
+}
+html .image_thumb ul li h2 {
+	font-size: 1.5em; 
+	margin: 5px 0; padding: 0;
+}
+html .image_thumb ul li h2 a {
+	color:#044c9d;
+    font-size: 11px;
+    line-height:1.3em;
+}
+.image_thumb ul li .block {
+	float: left; 
+	margin-left: 5px;
+	padding: 0;
+	/*width: 180px;*/
+    width: 240px;
+}	
+.image_thumb ul li p{display: none;}
+
+.als-viewport {
+	position: relative;
+	overflow: hidden;
+	margin: 0px auto;
+}
+
+.als-item {
+	position: relative;
+	display: block;
+	/*text-align: center;*/
+	cursor: pointer;
+	float: left;
+}
+.als-wrapper {
+	position: relative;
+	list-style: none;
+}
+.als-prev, .als-next {
+	/*position: absolute;*/
+	cursor: pointer;
+	clear: both;
+}

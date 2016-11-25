@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddItem" xml:space="preserve">
+    <value>Thêm mới</value>
+  </data>
+  <data name="ArticleBelongTopic" xml:space="preserve">
+    <value>Thuộc Chuyên mục</value>
+  </data>
+  <data name="ArticleConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa bài viết này?</value>
+  </data>
+  <data name="ArticleContent" xml:space="preserve">
+    <value>Nội dung Bài viết</value>
+  </data>
+  <data name="ArticleDescription" xml:space="preserve">
+    <value>Mô tả Bài viết</value>
+  </data>
+  <data name="ArticleDetail" xml:space="preserve">
+    <value>Chi tiết Bài viết</value>
+  </data>
+  <data name="ArticleEditContent" xml:space="preserve">
+    <value>Hiệu chỉnh Nội dung</value>
+  </data>
+  <data name="ArticleEditDescription" xml:space="preserve">
+    <value>Hiệu chỉnh Mô tả</value>
+  </data>
+  <data name="ArticleEditTopic" xml:space="preserve">
+    <value>Hiệu chỉnh Chuyên mục</value>
+  </data>
+  <data name="ArticleManage" xml:space="preserve">
+    <value>Bài Viết</value>
+  </data>
+  <data name="ArticleNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Bài viết</value>
+  </data>
+  <data name="ArticleSelect" xml:space="preserve">
+    <value>Select Article</value>
+  </data>
+  <data name="ArticleTopic" xml:space="preserve">
+    <value>Hiệu chỉnh Chuyên mục cho Bài viết</value>
+  </data>
+  <data name="ArticleUpdateContentSuccess" xml:space="preserve">
+    <value>Cập nhật nội dung cho Bài viết thành công!</value>
+  </data>
+  <data name="ArticleUpdateDescriptionSuccess" xml:space="preserve">
+    <value>Cập nhật mô tả cho Bài viết thành công!</value>
+  </data>
+  <data name="ArticleUpdateTopicSuccess" xml:space="preserve">
+    <value>Cập nhật chuyên mục cho Bài viết thành công!</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Duyệt</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Hủy</value>
+  </data>
+  <data name="ChangeGroup" xml:space="preserve">
+    <value>Hiệu chỉnh nhóm</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Đổi mật khẩu</value>
+  </data>
+  <data name="ChangeTheme" xml:space="preserve">
+    <value>Đổi giao diện</value>
+  </data>
+  <data name="ChangeUser" xml:space="preserve">
+    <value>Hiệu chỉnh người dùng</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Nhập lại mật khẩu</value>
+  </data>
+  <data name="ContentManagement" xml:space="preserve">
+    <value>Quản lý Nội dung</value>
+  </data>
+  <data name="Copyright" xml:space="preserve">
+    <value>Sử dụng bởi PSC Portal</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Ngày tạo</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>Xóa</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Mô tả</value>
+  </data>
+  <data name="DescriptionCanNotEmpty" xml:space="preserve">
+    <value>Mô tả không được rỗng!</value>
+  </data>
+  <data name="DocumentBelongDocumentType" xml:space="preserve">
+    <value>Tài liệu thuộc loại</value>
+  </data>
+  <data name="DocumentConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa tài liệu này?</value>
+  </data>
+  <data name="DocumentDetail" xml:space="preserve">
+    <value>Chi tiết văn bản</value>
+  </data>
+  <data name="DocumentDocumentType" xml:space="preserve">
+    <value>Hiệu chỉnh loại cho tài liệu</value>
+  </data>
+  <data name="DocumentEditType" xml:space="preserve">
+    <value>Sửa Loại tài liệu</value>
+  </data>
+  <data name="DocumentManage" xml:space="preserve">
+    <value>Tài liệu</value>
+  </data>
+  <data name="DocumentManagement" xml:space="preserve">
+    <value>Quản lý Tài liệu</value>
+  </data>
+  <data name="DocumentNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn tài liệu!</value>
+  </data>
+  <data name="DocumentTypeConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa loại tài  liệu này?</value>
+  </data>
+  <data name="DocumentTypeDetail" xml:space="preserve">
+    <value>Chi tiết loại tài liệu</value>
+  </data>
+  <data name="DocumentTypeManage" xml:space="preserve">
+    <value>Loại tài liệu</value>
+  </data>
+  <data name="DocumentTypeNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn loại tài liệu!</value>
+  </data>
+  <data name="DocumentUpdateTypeSuccess" xml:space="preserve">
+    <value>Cập nhật loại tài liệu cho tài liệu thành công!</value>
+  </data>
+  <data name="EditItem" xml:space="preserve">
+    <value>Hiệu chỉnh</value>
+  </data>
+  <data name="FileDisplay" xml:space="preserve">
+    <value>File hiển thị</value>
+  </data>
+  <data name="FileDownload" xml:space="preserve">
+    <value>File download</value>
+  </data>
+  <data name="GrantGroupList" xml:space="preserve">
+    <value>Danh sách nhóm có quyền</value>
+  </data>
+  <data name="GrantItem" xml:space="preserve">
+    <value>Phân quyền</value>
+  </data>
+  <data name="GroupBelongUser" xml:space="preserve">
+    <value>Nhóm thuộc người dùng</value>
+  </data>
+  <data name="GroupConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Nhóm này?</value>
+  </data>
+  <data name="GroupDetail" xml:space="preserve">
+    <value>Chi tiết Nhóm</value>
+  </data>
+  <data name="GroupEmpty" xml:space="preserve">
+    <value>Không có nhóm</value>
+  </data>
+  <data name="GroupList" xml:space="preserve">
+    <value>Danh sách nhóm</value>
+  </data>
+  <data name="GroupManage" xml:space="preserve">
+    <value>Nhóm</value>
+  </data>
+  <data name="GroupNotBelongUser" xml:space="preserve">
+    <value>Nhóm không thuộc người dùng</value>
+  </data>
+  <data name="GroupNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Nhóm!</value>
+  </data>
+  <data name="GroupUpdateUserSuccess" xml:space="preserve">
+    <value>Cập nhật người dùng thành công!</value>
+  </data>
+  <data name="Hi" xml:space="preserve">
+    <value>Chào</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>Mã</value>
+  </data>
+  <data name="Information" xml:space="preserve">
+    <value>Thông tin</value>
+  </data>
+  <data name="IsOnline" xml:space="preserve">
+    <value>Đang online</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="MenuCanNotMoveUp" xml:space="preserve">
+    <value>Menu này không thể di chuyển lên trên!</value>
+  </data>
+  <data name="MenuConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Menu này?</value>
+  </data>
+  <data name="MenuDetail" xml:space="preserve">
+    <value>Chi tiết Menu</value>
+  </data>
+  <data name="MenuManage" xml:space="preserve">
+    <value>Quản lý Menu</value>
+  </data>
+  <data name="MenuMasterConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Menu Master này?</value>
+  </data>
+  <data name="MenuMasterDetail" xml:space="preserve">
+    <value>Chi tiết MenuMaster</value>
+  </data>
+  <data name="MenuMasterManage" xml:space="preserve">
+    <value>Liên kết</value>
+  </data>
+  <data name="MenuMasterNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Menu Master!</value>
+  </data>
+  <data name="MenuNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Menu !</value>
+  </data>
+  <data name="ModifiedDate" xml:space="preserve">
+    <value>Ngày sửa</value>
+  </data>
+  <data name="ModuleConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Module này?</value>
+  </data>
+  <data name="ModuleDetail" xml:space="preserve">
+    <value>Chi tiết Module</value>
+  </data>
+  <data name="ModuleManage" xml:space="preserve">
+    <value>Modules</value>
+  </data>
+  <data name="ModuleNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Module!</value>
+  </data>
+  <data name="MoveDown" xml:space="preserve">
+    <value>Di chuyển xuống</value>
+  </data>
+  <data name="MoveUp" xml:space="preserve">
+    <value>Di chuyển lên</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Tên</value>
+  </data>
+  <data name="NameCanNotEmpty" xml:space="preserve">
+    <value>Tên không được rỗng!</value>
+  </data>
+  <data name="NavigateTo" xml:space="preserve">
+    <value>Liên kết đến</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>Mật khẩu mới</value>
+  </data>
+  <data name="NewPasswordConfirm" xml:space="preserve">
+    <value>Nhập lại mật khẩu mới</value>
+  </data>
+  <data name="OtherPage" xml:space="preserve">
+    <value>Trang khác</value>
+  </data>
+  <data name="PageChangeStructure" xml:space="preserve">
+    <value>Hiệu chỉnh cấu trúc</value>
+  </data>
+  <data name="PageConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa trang này?</value>
+  </data>
+  <data name="PageDetail" xml:space="preserve">
+    <value>Chi tiết trang</value>
+  </data>
+  <data name="PageManage" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="PageNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn trang!</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mật khẩu</value>
+  </data>
+  <data name="PasswordNotMatch" xml:space="preserve">
+    <value>Password confirm không đúng!</value>
+  </data>
+  <data name="PasswordRequire" xml:space="preserve">
+    <value>Mật khẩu không đc trống</value>
+  </data>
+  <data name="PasswordUpdateFail" xml:space="preserve">
+    <value>Cập nhật password thất bại!</value>
+  </data>
+  <data name="PasswordUpdateSuccess" xml:space="preserve">
+    <value>Cập nhật password thành công!</value>
+  </data>
+  <data name="PathToFileDisplay" xml:space="preserve">
+    <value>Đường dẫn đến file hiển thị</value>
+  </data>
+  <data name="PathToFileModify" xml:space="preserve">
+    <value>Đường dẫn đến file hiệu chỉnh</value>
+  </data>
+  <data name="PortalManagement" xml:space="preserve">
+    <value>Quản lý Portal</value>
+  </data>
+  <data name="PortletConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Portlet này?</value>
+  </data>
+  <data name="PortletDetail" xml:space="preserve">
+    <value>Chi tiết Portlet</value>
+  </data>
+  <data name="PortletManage" xml:space="preserve">
+    <value>Portlet</value>
+  </data>
+  <data name="PortletNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Portlet!</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Xem hiển thị</value>
+  </data>
+  <data name="Publish" xml:space="preserve">
+    <value>Xuất bản</value>
+  </data>
+  <data name="Recover" xml:space="preserve">
+    <value>Phục hồi</value>
+  </data>
+  <data name="RecoverArticle" xml:space="preserve">
+    <value>Phục hồi bài viết</value>
+  </data>
+  <data name="Remember" xml:space="preserve">
+    <value>Ghi nhớ</value>
+  </data>
+  <data name="ReturnToMenuMaster" xml:space="preserve">
+    <value>Trở về MenuMaster</value>
+  </data>
+  <data name="RoleNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Nhóm!</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Lưu</value>
+  </data>
+  <data name="SecretAnswer" xml:space="preserve">
+    <value>Câu trả lời bí mật</value>
+  </data>
+  <data name="SecretQuestion" xml:space="preserve">
+    <value>Câu hỏi bí mật</value>
+  </data>
+  <data name="SecurityManagement" xml:space="preserve">
+    <value>Quản lý Người dùng</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Tiêu đề</value>
+  </data>
+  <data name="TopicConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Chuyên mục này?</value>
+  </data>
+  <data name="TopicDetail" xml:space="preserve">
+    <value>Chi tiết Chuyên mục</value>
+  </data>
+  <data name="TopicGrant" xml:space="preserve">
+    <value>Phân quyền cho Chuyên mục</value>
+  </data>
+  <data name="TopicManage" xml:space="preserve">
+    <value>Chuyên mục</value>
+  </data>
+  <data name="TopicNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn chuyên mục!</value>
+  </data>
+  <data name="TopicSelect" xml:space="preserve">
+    <value>Chọn Chuyên mục</value>
+  </data>
+  <data name="TrashManage" xml:space="preserve">
+    <value>Quản lý thùng rác</value>
+  </data>
+  <data name="Unpublish" xml:space="preserve">
+    <value>K.xuất bản</value>
+  </data>
+  <data name="UserBelongGroup" xml:space="preserve">
+    <value>Người dùng thuộc nhóm</value>
+  </data>
+  <data name="UserConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa User này?</value>
+  </data>
+  <data name="UserDetail" xml:space="preserve">
+    <value>Chi tiết người dùng</value>
+  </data>
+  <data name="UserManage" xml:space="preserve">
+    <value>Người dùng</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Tên đăng nhập</value>
+  </data>
+  <data name="UsernameRequire" xml:space="preserve">
+    <value>Tên đăng nhập không được trống</value>
+  </data>
+  <data name="UserNotBelongGroup" xml:space="preserve">
+    <value>Người dùng không thuộc nhóm</value>
+  </data>
+  <data name="UserNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Người dùng!</value>
+  </data>
+  <data name="Warning" xml:space="preserve">
+    <value>Chú ý</value>
+  </data>
+  <data name="Article" xml:space="preserve">
+    <value>Bài viết</value>
+  </data>
+  <data name="Page" xml:space="preserve">
+    <value>Trang</value>
+  </data>
+  <data name="Topic" xml:space="preserve">
+    <value>Chuyên mục</value>
+  </data>
+  <data name="DocumentType" xml:space="preserve">
+    <value>Loại tài liệu</value>
+  </data>
+  <data name="PageDisplay" xml:space="preserve">
+    <value>Trang hiển thị</value>
+  </data>
+  <data name="TopicEditContentTemplate" xml:space="preserve">
+    <value>Hiệu chỉnh HTML mẫu</value>
+  </data>
+  <data name="ArticleChangeTopicPrimary" xml:space="preserve">
+    <value>Chuyển chuyên mục chính</value>
+  </data>
+  <data name="TopicDeleteSuccess" xml:space="preserve">
+    <value>Xóa Chuyên mục thành công</value>
+  </data>
+  <data name="TopicEditTemplateSuccess" xml:space="preserve">
+    <value>Cập nhật HTML mẫu cho Chuyên mục thành công</value>
+  </data>
+  <data name="ArticleBelongTopicPrimary" xml:space="preserve">
+    <value>Chuyên mục chính</value>
+  </data>
+  <data name="ArticleChangeTopicPrimarySuccess" xml:space="preserve">
+    <value>Chuyển Chuyên mục cho Bài viết thành công</value>
+  </data>
+  <data name="DocumentTypeSelect" xml:space="preserve">
+    <value>Chọn loại tài liệu</value>
+  </data>
+  <data name="DocumentBelongDocumentTypePrimary" xml:space="preserve">
+    <value>Loại tài liệu chính</value>
+  </data>
+  <data name="DocumentChangeDocumentTypePrimary" xml:space="preserve">
+    <value>Chuyển loại tài liệu chính</value>
+    <comment>*</comment>
+  </data>
+  <data name="DocumentChangeDocumentTypePrimarySuccess" xml:space="preserve">
+    <value>Chuyển tài liệu chính thành công</value>
+  </data>
+  <data name="ArticleChangeTopicPrimaryOnlyOne" xml:space="preserve">
+    <value>Bài viết chỉ có một chuyên mục!</value>
+  </data>
+  <data name="DocumentChangeDocumentTypePrimaryOnlyOne" xml:space="preserve">
+    <value>Tài liệu chỉ thuộc một loại tài liệu!</value>
+  </data>
+  <data name="AticleNoBelongTopicPrimary" xml:space="preserve">
+    <value>BViết chưa chọn chuyên mục chính</value>
+    <comment>*</comment>
+  </data>
+  <data name="DocumentNoBelongDocumentTypePrimary" xml:space="preserve">
+    <value>Tài liệu chưa chọn loại tài liệu chính</value>
+  </data>
+  <data name="PageCopy" xml:space="preserve">
+    <value>Sao chép</value>
+  </data>
+  <data name="PortletInstanceConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Portlet này!</value>
+  </data>
+  <data name="PanelRemoveConfirm" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Panel  này?</value>
+  </data>
+  <data name="TopicCopy" xml:space="preserve">
+    <value>Sao chép Chuyen mục</value>
+  </data>
+  <data name="MenuMasterCopy" xml:space="preserve">
+    <value>Sao chép MenuMaster</value>
+  </data>
+  <data name="MenuMakeTopic" xml:space="preserve">
+    <value>Chuyển Menu thành CM</value>
+  </data>
+  <data name="TopicMakeMenu" xml:space="preserve">
+    <value>Chuyển chuyên mục thành menu</value>
+  </data>
+  <data name="Module" xml:space="preserve">
+    <value>Module</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Họ và tên</value>
+  </data>
+  <data name="ScientificHistory" xml:space="preserve">
+    <value>Lý lịch khoa học</value>
+  </data>
+  <data name="TeacherManage" xml:space="preserve">
+    <value>Quản lý giảng viên</value>
+  </data>
+  <data name="Document" xml:space="preserve">
+    <value>Tài liệu</value>
+  </data>
+  <data name="ClipFileUpLoad" xml:space="preserve">
+    <value>Tập tin video (.flv)</value>
+  </data>
+  <data name="ClipNewsConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa clip tin tức</value>
+  </data>
+  <data name="ClipNewsDeleteSuccess" xml:space="preserve">
+    <value>Xóa thành công</value>
+  </data>
+  <data name="ClipNewsDetail" xml:space="preserve">
+    <value>Chi tiết clip tin tức</value>
+  </data>
+  <data name="ClipNewsFileUpLoadNotchoose" xml:space="preserve">
+    <value>Bạn chưa chọn file tải lên</value>
+  </data>
+  <data name="ClipNewsManage" xml:space="preserve">
+    <value>Clip tin tức</value>
+  </data>
+  <data name="ClipNewsNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn clip tin tức</value>
+  </data>
+  <data name="ClipNewsDescription" xml:space="preserve">
+    <value>Diễn giải</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Phòng ban</value>
+  </data>
+  <data name="DepartmentConfirmDelete" xml:space="preserve">
+    <value>Bạn có chắc muốn xóa Phòng ban này?</value>
+  </data>
+  <data name="DepartmentDetail" xml:space="preserve">
+    <value>Chi tiết Phòng ban</value>
+  </data>
+  <data name="DepartmentNotChoose" xml:space="preserve">
+    <value>Bạn chưa chọn Phòng ban!</value>
+  </data>
+  <data name="Feedback" xml:space="preserve">
+    <value>Liên hệ</value>
+  </data>
+  <data name="ProcessFeedBack" xml:space="preserve">
+    <value>Xử lý liên hệ</value>
+  </data>
+  <data name="Process" xml:space="preserve">
+    <value>Xử lý</value>
+  </data>
+  <data name="PageGrant" xml:space="preserve">
+    <value>Phân quyền trang</value>
+  </data>
+  <data name="MenuMasterGrant" xml:space="preserve">
+    <value>Phân quyền Liên kết</value>
+  </data>
+  <data name="CreateDate" xml:space="preserve">
+    <value>Đăng ngày</value>
+  </data>
+  <data name="OtherNews" xml:space="preserve">
+    <value>Các tin khác</value>
+  </data>
+  <data name="PrintArticle" xml:space="preserve">
+    <value>In bài viết</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Trở về</value>
+  </data>
+  <data name="SeeAll" xml:space="preserve">
+    <value>Tất cả</value>
+  </data>
+  <data name="SeeMore" xml:space="preserve">
+    <value>Chi tiết</value>
+  </data>
+  <data name="SendToFriend" xml:space="preserve">
+    <value>Gởi cho bạn bè</value>
+  </data>
+  <data name="TopPage" xml:space="preserve">
+    <value>Đầu trang</value>
+  </data>
+  <data name="Captcha" xml:space="preserve">
+    <value>Mã xác nhận</value>
+  </data>
+  <data name="Comments" xml:space="preserve">
+    <value>Góp ý</value>
+  </data>
+  <data name="From" xml:space="preserve">
+    <value>Từ</value>
+  </data>
+  <data name="InvalidCode" xml:space="preserve">
+    <value>Mã code không hợp lệ</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Email không hợp lệ</value>
+  </data>
+  <data name="PleaseTypeCode" xml:space="preserve">
+    <value>Vui lòng gõ mã an toàn</value>
+  </data>
+  <data name="Reply" xml:space="preserve">
+    <value>Câu trả lời</value>
+  </data>
+  <data name="Required" xml:space="preserve">
+    <value>Không được trống</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Lịch công tác tuần</value>
+  </data>
+  <data name="Send" xml:space="preserve">
+    <value>Gửi</value>
+  </data>
+  <data name="To" xml:space="preserve">
+    <value>Đến</value>
+  </data>
+  <data name="Week" xml:space="preserve">
+    <value>Tuần lễ thứ</value>
+  </data>
+  <data name="VisitMonth" xml:space="preserve">
+    <value>Truy cập tháng</value>
+  </data>
+  <data name="VisitTotal" xml:space="preserve">
+    <value>Tổng truy cập</value>
+  </data>
+  <data name="WebsiteSelect" xml:space="preserve">
+    <value>Chọn Website...</value>
+  </data>
+  <data name="SubDomainDetail" xml:space="preserve">
+    <value>Chi tiết SubDomain</value>
+  </data>
+</root>

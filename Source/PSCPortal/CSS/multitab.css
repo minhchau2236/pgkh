@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0px; padding:0px;}
+.wrapper{
+	width:560px;
+	margin:20px auto;
+	}
+
+a{
+text-decoration:none;
+}
+a img{
+border:none;
+}
+li{
+list-style:none;
+}
+
+.left{
+float:left;
+}
+
+.right{
+float:right;
+}
+
+.tab{
+	clear:both;
+	float:left;
+	width:570px;
+	height:38px;
+	background:#0586cf;
+}
+
+.tab li{
+display:block;
+float:left;
+width:100px;
+height:38px;
+background:url(/Resources/Images/Images_multitab/mn_bg.jpg) repeat-x;
+margin-left:2px;
+margin-right:0px;
+-moz-border-radius:5px;
+-webkit-border-radius:5px;
+-o-border-radius:5px;
+-mz-border-radius:5px;
+}
+
+.tab ul li a{
+float:left;
+color:#FFFFFF;
+font:12px;
+font:Arial, Helvetica, sans-serif;
+text-align:center;
+line-height:29px;
+margin-left:10px;
+}
+
+.tab ul li a:hover{
+color:#4c4949;
+}
+.ct_tab{
+width:550px;
+/*background:url(/Resources/Images/Images_multitab/bg_tt.jpg) repeat-x;*/
+float:left;
+padding-left:10px;
+}
+.ct_tab img{
+margin-right:5px;
+}
+.line{
+background:url(/Resources/Images/Images_multitab/line.jpg) no-repeat;
+height:1px;
+}
+.ct_tab ul{
+margin:0px 5px 0px 5px;
+}
+.ct_tab li{
+width:540px;
+margin-top:5px;
+margin-bottom:5px;
+}
+
+.ct_tab a{
+font:12px Arial, Helvetica, sans-serif;
+color:#4c4949;
+}
+.ct_tab a:hover{
+color:#FF6600;
+}
+
+.news{
+width:560px;
+float:left;
+margin-top:10px;
+}
+.topic_news{
+width:349px;
+height:30px;
+background:url(/Resources/Images/Images_multitab/bg_td.jpg) repeat-x;
+}
+
+.topic_news a{
+font:12px Arial, Helvetica, sans-serif;
+color:#fff;
+font-weight:bold;
+line-height:30px;
+}
+
+.nd_1{
+width:520px;
+float:left;
+margin-left:20px;
+margin-right:20px;
+}
+
+.news1{
+float:left;
+width:253px;
+margin-right:10px;
+}
+.news1 img{
+float:left;
+margin:5px 5px;
+}
+.news1 a{
+font:12px Arial, Helvetica, sans-serif;
+color:#333333;
+line-height:20px;
+}
+.news1 a:hover{
+color:#999999;
+}
+.news2 a:hover{
+color:#999999;
+}
+
+.news2{
+float:left;
+width:253px;
+
+}
+.news2 img{
+float:left;
+margin:5px 5px;
+}
+.news2 a{
+font:12px Arial, Helvetica, sans-serif;
+color:#333333;
+line-height:20px;
+}.tinkhac{
+width:560px;
+}
+.topic_tinkhac a{
+color:#0099f8;
+font:14px Arial, Helvetica, sans-serif;
+font-weight:bold;
+}
+.topic_tinkhac
+{
+    border-bottom:1px dotted #999;  
+}
+.ct_des a
+{
+    text-decoration:none;
+    font:12px/20px Arial, Helvetica, sans-serif;
+    color:#333;
+}
+.ct_des a:hover
+{
+    color:#ff6639;    
+}
+ul.intintab{
+	margin:0 auto;
+	padding-left:30px;
+	display:block;
+	padding-top:10px;
+	width:530px;
+}
+ul.intintab li{
+	clear:both;
+	list-style-image:url(/Resources/Images/Images_multitab/arow_chitiet.png);
+}
+ul.intintab li a{
+	text-decoration:none;
+	color:#333;
+}
+ul.intintab li a:hover{
+	color:#FF6600;
+}
+.ngaytintab{
+	font:normal 12px Arial, Helvetica, sans-serif;
+	color:#999999;
+	padding-right:10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

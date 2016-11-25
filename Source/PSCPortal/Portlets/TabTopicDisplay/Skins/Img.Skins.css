@@ -1,0 +1,59 @@
+﻿/*left*/
+.RadTabStrip_Skins .rtsLI .rtsLink
+{
+  line-height: 35px;
+  color:#333; /* or #fff, #ffffff */
+  background: transparent url('/Portlets/TabTopicDisplay/Skins/Img/tabLeft.gif') 0px 0px no-repeat;
+  text-decoration: none;
+  margin-right: 1px;
+  padding-left: 0px;
+  
+}
+/* right */
+.RadTabStrip_Skins .rtsLI .rtsLink .rtsOut
+{
+  padding-right: 3px;
+  line-height: 35px;
+  background: transparent url('/Portlets/TabTopicDisplay/Skins/Img/tabRight.gif') right 0px no-repeat;
+}
+/*middle*/
+.RadTabStrip_Skins .rtsLI .rtsLink .rtsIn
+{
+  line-height: 35px;
+  background: transparent url('/Portlets/TabTopicDisplay/Skins/Img/tabMiddle.gif') 0px 0px repeat-x;
+  text-align: center;
+  padding-left: 3px;
+  height:35px;
+  padding-right: 3px;
+  
+}
+/*cai duoc chon*/
+.RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected
+{
+  line-height: 35px;
+  /*background: transparent url('/Portlets/TabTopicDisplay/Skins/Img/TabLeftSelected.gif') 0px 0px  no-repeat;*/
+  margin-right: 3px;
+  
+  
+}
+.RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected .rtsIn
+{
+  background-image: url('/Portlets/TabTopicDisplay/Skins/Img/tabMiddleSelected.gif');
+  background-repeat:repeat-x;
+}
+
+.RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected .rtsOut
+{
+  line-height: 35px;
+  color:#333; /* or #000, #000000 */
+  background-image: url('/Portlets/TabTopicDisplay/Skins/Img/tabRightSelected.gif');
+}
+.RadTabStrip_Skins
+{
+  font: bold 11px Tahoma , Arial, Verdana, Sans-serif;
+  text-transform: uppercase;
+}
+.RadTabStrip .rtsTxt
+{
+line-height:35px;
+}

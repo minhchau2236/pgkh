@@ -1,0 +1,96 @@
+﻿
+/* Roor - background*/
+.RadMenu_Yellow .rmRootGroup {
+    background: #544c2e;
+    height: 40px;
+    padding-left: 0px;
+    clear: both;
+}
+
+.RadMenu_Yellow a.rmLink,
+.RadMenu_Yellow .rmText {
+    background-image: url('Menu/rmSprite_DoiTac.png');
+    background-color: Transparent;
+}
+/* Text*/
+.RadMenu_Yellow .rmText {
+    float: left;
+    font: 12px Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 38px;
+    background-position: 100% -46px;
+    vertical-align: top;
+    margin: 1px 0px 0px 0px;
+    padding-left: 11px !important;
+    padding-right: 21px !important;
+}
+
+
+.RadMenu_Yellow .rmLast .rmText {
+    background-image: none;
+}
+
+.RadMenu_Yellow .rmLink {
+    text-decoration: none;
+}
+
+/*---------------------------------------------------------------------*/
+
+.RadMenu_Yellow a.rmLink:hover {
+    background-position: 100% -293px;
+}
+
+
+.RadMenu_Yellow a.rmExpanded,
+.RadMenu_Yellow a.rmExpanded:hover {
+    background-position: 100% -293px;
+}
+
+
+.RadMenu_Yellow .rmLast a.rmExpanded .rmText,
+.RadMenu_Yellow .rmLast a.rmExpanded:hover .rmText {
+    background-position: 100% -46px;
+    background-image: url('Menu/rmSprite_DoiTac.png');
+}
+
+.RadMenu_Yellow a.rmExpanded .rmExpandRight {
+    color: #fff;
+    background-image: url('Menu/rmSprite_DoiTac.png');
+    background-position: 0px -235px !important;
+    background-repeat: repeat-x;
+}
+/*---------------------------------------------------------------------*/
+/* Cấp 2 - Text*/
+.RadMenu_Yellow .rmLevel1 .rmText {
+    text-align: left;
+    font-family: Arial;
+    font-weight: normal;
+    text-transform: none;
+    font-size: 12px;
+    height: 34px;
+    line-height:35px;
+    COLOR: #fff;
+    TEXT-DECORATION: none;
+    padding-right: 33px !important;
+    padding-left: 27px !important;
+    margin-left: 0px !important;
+    border-right: 1px solid #544c2e;
+    border-left: 1px solid #544c2e;
+    border-bottom: 1px solid #544c2e;
+    background-image: url('Menu/rmSprite_DoiTac.png');
+    background-position: 0px -200px !important;
+}
+/* Cấp 2 - Link*/
+.RadMenu_Yellow .rmLevel1 .rmLink {
+    text-decoration: none;
+}
+
+    .RadMenu_Yellow .rmLevel1 .rmLink :hover {
+        color: #fff;
+        background-image: url('Menu/rmSprite_DoiTac.png');
+        background-position: 0px -235px !important;
+        background-repeat: repeat-x;
+    }
+/*-------------------------------*/

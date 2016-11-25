@@ -1,0 +1,16 @@
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Security.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Security.pdb
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Engine.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Framework.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Framework.pdb
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.csprojResolveAssemblyReference.cache
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.dll
+D:\Projects\Portal\HBU_New\HBU\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.pdb
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Security.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Security.pdb
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Engine.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Framework.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\bin\Release\PSCPortal.Framework.pdb
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.csprojResolveAssemblyReference.cache
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.dll
+D:\Projects\Portal\PhatGiaoKhanhHoa2\Source\PSCPortal_Sln\Source\PSCPortal.Security\obj\Release\PSCPortal.Security.pdb

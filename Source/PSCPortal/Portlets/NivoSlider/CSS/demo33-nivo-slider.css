@@ -1,0 +1,129 @@
+﻿/*
+ * jQuery Nivo Slider v3.1
+ * http://nivo.dev7studios.com
+ *
+ * Copyright 2012, Dev7studios
+ * Free to use and abuse under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+ 
+/* The Nivo Slider styles */
+.nivoSlider {
+position:relative;
+	width:100%;
+	height:auto;
+	overflow:hidden;
+	min-width:500px;
+}
+.nivoSlider img {
+    display: block;
+	position:absolute;
+	top:0px;
+	left:0px;
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100%;
+    max-width:none;
+}
+.nivo-main-image {
+	display:block !important;
+	position:relative !important; 
+	width:100% !important;
+
+}
+.nivoSlider a {
+	border:0;
+	display:block;
+}
+.nivoSlider a.nivo-imageLink {
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:100%;
+    min-height: 100%;
+	max-height:100%;
+	border:0;
+	padding:0;
+	margin:0;
+	z-index:6;
+	display:none;
+}
+.nivo-slice {
+	display:block;
+	position:absolute;
+	z-index:5;
+	height:100%;
+    width: 100% !important;
+	top:0;
+}
+.nivo-box {
+	display:block;
+	position:absolute;
+	z-index:5;
+	overflow:hidden;
+}
+.nivo-box img { display:block; }
+
+.nivo-controlNav {
+	text-align:center;
+	padding: 20px 0;
+}
+.nivo-controlNav a {
+	display:inline-block;
+	text-indent:-9999px;
+	width:6px;
+	height:6px;
+	background:#727272;
+	position:relative;
+	cursor:pointer;
+	border:5px solid #727272;
+	border-radius:17px;
+	margin-right:16px;
+	z-index:19;
+	-webkit-transition:all 200ms;
+	-moz-transition:all 200ms;
+ 	-o-transition:all 200ms;
+ 	transition:all 200ms;
+}
+.nivo-controlNav a:hover, .nivo-controlNav a.active {
+	width:6px;
+	height:6px;	
+	background:#FFF;
+	border:5px solid #000;
+}
+.nivo-directionNav a {
+	display:none;
+}
+.nivo-caption {
+	position:absolute;
+	display:none;
+	font:38px 'Actor', sans-serif;
+	background:black;
+
+	color:#FFF;
+	padding:10px;
+	white-space:nowrap;
+	z-index:10;
+}
+.nivo-caption2 {
+	position:absolute;
+	font:26px 'Actor', sans-serif;
+	background:black;
+	color:#FFF;
+	padding:10px;
+	white-space:nowrap;
+	z-index:10;
+}
+.nivo-caption3, .nivo-caption4, .nivo-caption5 {
+	position:absolute;
+	font:20px 'Actor', sans-serif;
+	background:black;
+	color:#FFF;
+	padding:10px;
+	white-space:nowrap;
+	z-index:10;
+}
+.nivo-caption5 {
+	background:#FFF;
+	color:black;
+}

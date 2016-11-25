@@ -1,0 +1,45 @@
+﻿.RadTabStrip_TabSkin .rtsLast
+{
+    color: #08437f!important;
+}
+
+/*left*/
+.RadTabStrip_TabSkin .rtsLI .rtsLink
+{
+    text-decoration: none;
+    margin-right: 0px;
+    padding-left: 0px;
+ }
+/* right */
+    .RadTabStrip_TabSkin .rtsLI .rtsLink .rtsOut
+    {
+        background: transparent url('/Portlets/TabMenu/tab_line.jpg') right 0 no-repeat;
+        padding-right: 1px;
+    }
+    .RadTabStrip_TabSkin .rtsLast .rtsLink .rtsOut
+    {
+        background-image: url('');
+    }
+/*middle*/
+    .RadTabStrip_TabSkin .rtsLI .rtsLink .rtsIn
+    {
+        text-align: center;
+        padding-left: 3px;
+        padding-right: 5px;
+        color: #fff;
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+/*cai duoc chon*/
+    .RadTabStrip_TabSkin .rtsLI .rtsLink.rtsSelected
+    {
+        margin-right: 0px;
+    }
+    .RadTabStrip_TabSkin .rtsLI .rtsLink.rtsSelected .rtsIn
+    {
+        color: yellow;
+    }
+    .RadTabStrip_TabSkin
+    {
+        font: 13px Arial, Verdana, Sans-serif;
+    }

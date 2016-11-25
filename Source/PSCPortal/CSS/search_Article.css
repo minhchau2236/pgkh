@@ -1,0 +1,58 @@
+﻿.title_topicdisplay {
+    color: #074c95;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.result_lucene a {
+    color: red;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.title_topicdisplay:hover {
+    text-decoration: underline;
+}
+
+.h3_content {
+    text-align: justify;
+    font: 13px Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.Search_tintuc {
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.searchTieude a {
+    float: left;
+    font: 14px Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    color: #1c78b4;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.search_topic_news_title1 {
+    width: 100%;
+}
+
+.Highlight {
+    background-color: #FFFF00;
+    color: #CC3300;
+    font-weight: bold;
+}
+
+.search_title_topic a {
+    color: #074c95;
+    text-align: justify;
+    font-weight: bold;
+}
+
+.search_topic_news_title {
+    float: right;
+    display: inline;
+}

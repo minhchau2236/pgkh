@@ -1,0 +1,239 @@
+
+.TPNSSwrapper {
+	border:1px solid #AEAEAE;
+	background:#000000;
+    width:100%;
+}
+
+.TPNiceSlideShow {
+	z-index:5;
+	
+}
+
+.TPNiceSlideShowGallery {
+	overflow: hidden;
+	position: relative;
+}
+
+.TPNiceSlideShowGallery img {
+	border: 0;
+	margin: 0;
+}
+
+.TPNiceSlideShowGallery .slideElement {
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('loading-.gif');
+}
+
+.TPNiceSlideShowGallery .loadingElement {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: #000;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-image: url('loading-.gif');
+}
+
+.TPNiceSlideShowGallery .slideInfoZone {
+	z-index: 10;
+	text-indent: 0;
+	overflow: hidden;
+}
+
+.innerSlideInfoZone {
+	padding: 10px;
+	
+}
+.innerSlideInfoZone div {
+	color:#FFFFFF;
+}
+
+div.slideInfoZoneTitle a {
+	color:#FFFFFF;
+	text-decoration:none;
+	font-size:24px;
+	line-height:28px;
+	font-weight:700;
+}
+
+div.slideInfoZoneDescription {
+	color:#FFFFFF;
+}
+
+div.slideInfoZoneReadMore a {
+	color:#000000;
+	background: url(readmore.png) no-repeat;
+	font-size:11px;
+	display:block;
+	height:22px;
+	width:87px;
+	text-decoration:none;
+	line-height:22px;
+	margin-top:5px;
+	padding-left:15px;
+}
+
+/*.TPNiceSlideShowMenuWrp {
+	float:left;
+	width:50px;
+}*/
+.TPNiceSlideShowMenu {
+	}
+.TPNiceSlideShowMenu div {
+	background: url(/Portlets/FlvVideo/Images/bgmenu00.png) repeat-x 0 0;
+	cursor: pointer;
+	margin:0;
+	
+	
+}
+.TPNiceSlideShowMenuContent {
+	overflow:hidden;
+
+
+}
+.TPNiceSlideShowMenuContent p {
+
+}
+.TPNiceSlideShowMenuContent img {
+	border:2px solid #ffffff;
+	padding:0;}
+.TPNiceSlideShowMenu div:hover, .TPNiceSlideShowMenu div.active {
+	background: url(/Portlets/FlvVideo/Images/bgmenu00.png) repeat-x 0 -117px ;
+	cursor: pointer;
+
+}
+.TPNiceSlideShowMenu a {
+	color:#FFFFFF;
+	text-decoration:none;
+	line-height:24px;
+	font-weight:700;
+	
+ }
+.TPNiceSlideShowMenu span {
+padding:0 5px 0 5px;}
+.TPNiceSlideShowMenu a span.tpnssmenu_title  {
+font-size:14px;
+font-weight:400;
+line-height:100%;
+padding:0;
+
+
+}
+
+.TPNiceSlideShowMenu a span.tpnssmenu_desc  {
+font-size:10px;
+line-height:11px;
+font-weight:400;
+padding:0;
+font-family:verdana,arial;
+color:#97B7E6;
+}
+
+/* dont define width property here, it has defined with the php script */
+.tpniceslideshow_scrollbar-vert {
+	background: url(/Portlets/FlvVideo/Images/scrollbg.gif) repeat-y;}
+.tpniceslideshow_handle-vert{
+	height: 39px;
+	background: url(/Portlets/FlvVideo/Images/scrollno.gif) no-repeat;
+}
+
+
+
+ .pager
+    {
+        font-size: .9em;
+        font-weight: bolder;
+        display: none;
+    }
+    .pager a
+    {
+        color: #0093dd;
+        text-decoration: none;
+    }
+    /*.TPNSSwrapper
+    {
+        width: 218px;
+    }*/
+    .TPNiceSlideShowMenu div img
+    {
+        float: left;
+        margin: 8px;
+    }
+    .TPNiceSlideShowMenu div
+    {
+        /*
+        height: 60px;
+        width: 185px;*/
+        height: 35px;
+        width: 218px;
+    }
+    .TPNiceSlideShowMenuContent
+    {
+        text-align: left;
+        float: left;
+    }
+    .TPNiceSlideShow
+    {
+        /*
+        height: 180px;
+        width: 0px;
+        float: left;*/
+        height: 35px;
+        width: 0px;
+        float: left;
+    }
+    .TPNiceSlideShowMenuWrp
+    {
+        /*
+        height: 180px;
+        width: 185px;
+        overflow: hidden;
+          background: #CCCCCC;
+          */
+        height: 35px;
+        /*width: 218px;*/
+        width:100%;
+        overflow: hidden;
+        background: #CCCCCC;
+    }
+    .tpniceslideshow_scrollbar-vert
+    {
+        /*
+        height: 180px;
+        width: 22px;
+        float: right;*/
+        height: 0px;
+        width: 0px;
+    }
+    .tpniceslideshow_handle-vert
+    {
+        /* width: 22px;*/
+        width: 0px;
+    }
+    .TPNiceSlideShowGallery .slideInfoZone
+    {
+        /*
+        height: 200px;
+        width: 200px;
+        background: #CCCCCC;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -150px;
+        margin-left: -100px;*/
+        height: 600px;
+        width: 218px;
+        background: #CCCCCC;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -150px;
+        margin-left: -100px;
+    }

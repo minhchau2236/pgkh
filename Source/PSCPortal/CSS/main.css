@@ -1,0 +1,243 @@
+﻿body
+{	
+	margin: 0px 0px 0px 0px;
+}
+.weather
+{
+	font-size:11px;
+	font-family:Tahoma;
+	font-weight:bold;
+	color:#000000;
+}
+.text_menu
+{
+	font-family:Tahoma, Arial, Helvetica, san-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+.text_menu:hover
+{
+	color:#FF9900;
+}
+.bg_readmore
+{
+	background:url(/Resources/Images/readmore.jpg) no-repeat;	
+}
+.bg_menu_right
+{
+	background:url(/Resources/Images/bg_menu_right.jpg) repeat-x;
+}
+.menu
+{
+	font-family:Tahoma;
+	font-size:11px; 
+	color:#ffffff;
+	text-decoration:none;
+	font-weight:bold;
+}
+.menu:hover
+{
+	color:#ff9600;
+}
+.newstitle
+{
+	font-family:Arial;
+	font-size:13px; 	
+	color:#333;
+	text-decoration:none;
+	font-weight:bold;
+	float:left;
+	margin-left:4px;
+	margin-top:5px;
+	
+}
+.newstitle:hover
+{
+	color:#333;
+}
+
+.newstitle1
+{
+	font-family:Tahoma;
+	font-size:11px; 
+	color:#4d4d4d;
+	text-decoration:none;
+	font-weight:bold;
+}
+.newstitle1:hover
+{
+	color:#ff9600;
+}
+.hotnews1
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px; 
+	color:#636363;
+}
+.readmore
+{
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color:#ffffff;
+}
+.readmore:hover
+{
+	color:#ff9600;
+}
+.support
+{
+	
+	font-family:Tahoma;
+	font-size:11px;
+	color:#555555;
+	text-decoration:none;
+	font-weight:bold;
+
+}
+.support:hover
+{
+	color:#ff9600;
+}
+.border_images
+{
+	border:1px solid #c4c4c4;
+}
+.content
+{
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#636363;
+	padding-right: 5px;
+	
+}
+.up
+{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:10px;
+	color:#787878;
+}
+.news_day
+{
+	font-family:Tahoma;
+	font-size:11px; 
+	font-weight:bold;
+	color:#004c98;
+}
+.hotnews2
+{
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color:#4e4e4e;
+}
+.hotnews2:hover
+{
+	color:#ff9600;
+}
+.hotnews3
+{
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	color:#4e4e4e;
+	text-align:left;
+	line-height:120%;
+}
+.hotnews3:hover
+{
+	color:#ff9600;
+}
+.bg_footer
+{
+	background:url(/Resources/Images/bg_footer.jpg) repeat-x; 
+	width:1002px; 
+	height: 97px;
+	float:left;
+}
+.nameofcom
+{
+	font-size:12px;
+	font-family:Tahoma, sans-serif, Arial;
+	color:#ffffff;
+	text-align:center;
+	margin-top:15px;
+	font-weight:bold;
+}
+.addressofcom
+{
+	font-size:11px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	text-align:center;
+	margin-top:10px;
+	margin_bottom:15px;
+	font-weight:bold;
+}
+newstitle2
+{
+	padding-left:13px; padding-top:7px;;
+}
+.newstitle2 A
+{
+	font-family:Tahoma;
+	font-size:11px; 
+	color:#4d4d4d;
+	text-decoration:none;
+	font-weight:bold;
+}
+.newstitle2 A:hover
+{
+	color:#fc1e24;
+}
+.newstitle3
+{
+	margin-left:10px;
+	margin-top:10px;
+}
+.newstitle3 A
+{
+	font-family:Tahoma;
+	font-size:12px; 
+	color:#4d90c2;
+	text-decoration:none;
+	font-weight:bold;
+	margin-left:4px;
+	margin-top:17px;
+}
+.newstitle3 A:hover
+{
+	color:#fc1e24;
+}
+.Highlight
+{
+	background-color: #FFFF00;
+	color: #CC3300;
+	font-weight: bold;
+}
+
+.textinput
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#1a1a1b;
+	font-size:bold;
+	font-weight:bold;
+}
+.submit
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#b7b5b5;
+	font-size:bold;
+	font-weight:bold;
+	text-decoration:none;
+	
+}
+.submit:hover
+{
+	color:#403d3d;
+	text-decoration:underline;
+}

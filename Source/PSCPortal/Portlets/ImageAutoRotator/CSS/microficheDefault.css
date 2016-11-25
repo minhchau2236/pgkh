@@ -1,0 +1,52 @@
+ .microfiche_Slide {
+    display: block;
+    position: relative;
+    padding: 5px;
+    margin: 0;
+  }
+  .microfiche_Slide ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .microfiche_Slide li {
+    display: block;
+    float: left;
+    margin: 5px;
+    padding: 0;
+  }
+   
+  .microfiche_Slide li  a{
+	border: none;
+  }
+    .microfiche_Slide li img {
+      display: block;
+      margin: 0;
+	  padding-top: 10px;
+    }
+	
+
+	
+	.microfiche-prev-button
+	{
+		background-image: url("/Resources/ImagesPortal/HomePage/arrow_L.png");
+		background-position: 0 0;
+		display: block;
+		height: 9px;
+		width: 8px;
+		left: -30px;
+		position: relative;
+		float: left;
+	}
+	
+	.microfiche-next-button
+	{
+		background-image: url("/Resources/ImagesPortal/HomePage/arrow_R.png");
+		background-position: 0 0;
+		display: block;
+		height: 9px;
+		width: 8px;
+		right: -30px;
+		position: relative;
+		float: right;
+	}

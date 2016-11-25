@@ -1,0 +1,61 @@
+﻿.RadTabStrip_Skins {
+    border-bottom: 2px solid #9c200a;
+    width: 678px;
+    padding-left: 5px;
+}
+
+    .RadTabStrip_Skins .rtsLI {
+        padding: 0px 10px 0px 0px;
+    }
+
+    .RadTabStrip_Skins .rtsFirst {
+        padding-right: 10px;
+    }
+
+    .RadTabStrip_Skins .rtsLast {
+        padding: 0;
+    }
+    /*left*/
+    .RadTabStrip_Skins .rtsLI .rtsLink {
+        border-top: 1px solid #dfdddd;
+        border-left: 1px solid #dfdddd;
+        border-right: 1px solid #dfdddd;
+        font: 12px Arial, Helvetica, sans-serif;
+        height: 30px;
+        color: #4b4c4d;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+        /*middle*/
+        .RadTabStrip_Skins .rtsLI .rtsLink .rtsIn {
+            line-height: 33px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        /*cai duoc chon*/
+        .RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected {
+            background: -webkit-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+            background: -o-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+            background: -ms-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+            background: -moz-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+            font: 13px Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            height: 30px;
+        }
+
+            .RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected .rtsIn {
+                background: -webkit-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -o-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -ms-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -moz-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+            }
+
+            .RadTabStrip_Skins .rtsLI .rtsLink.rtsSelected .rtsOut {
+                background: -webkit-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -o-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -ms-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                background: -moz-radial-gradient(top left, circle farthest-corner, #ec6957 0%, #9c200a 100%);
+                line-height: 29px;
+                color: White;
+            }
